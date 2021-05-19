@@ -17,21 +17,19 @@ document.addEventListener('DOMContentLoaded', () =>{
   button.forEach((btn, index) => {
     // по клюку добавляем или удалем определенные классы
     btn.addEventListener('click', ()=>{
-      spisoc.forEach((element) => {
-        element.classList.add('hidden')
-      });
-      button.forEach((button) => {
-        button.classList.remove('feature__link_active')
-      });
-
-      spisoc[index].classList.toggle('hidden')
-      btn.classList.toggle('feature__link_active')
-
-        if (btn.addEventListener('click',  ()=>{
+        // если есть класс active  тогда удаляем его и до бавляем списку класс hidden
+        if (btn.classList.contains('feature__link_active')) {
+            btn.classList.remove('feature__link_active');
+            spisoc[index].classList.add('hidden');
+        }else{
+          spisoc.forEach((element) => {
+            element.classList.add('hidden')
+          });
+          button.forEach((button) => {
+            button.classList.remove('feature__link_active')
+          });
           spisoc[index].classList.toggle('hidden')
           btn.classList.toggle('feature__link_active')
-        })) {
-
         }
     })
   });
