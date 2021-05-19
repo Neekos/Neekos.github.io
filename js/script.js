@@ -1,4 +1,6 @@
+// слушатель событий
 document.addEventListener('DOMContentLoaded', () =>{
+  // отлавливаем селекторы классов
   const button = document.querySelectorAll('.feature__link')
   const spisoc = document.querySelectorAll('.feature-sub')
 
@@ -11,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () =>{
   // }
 
   // Второй вариан
-
+// через foreach переберам все кнопки
   button.forEach((btn, index) => {
+    // по клюку добавляем или удалем определенные классы
     btn.addEventListener('click', ()=>{
       spisoc.forEach((element) => {
         element.classList.add('hidden')
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
       spisoc[index].classList.toggle('hidden')
       btn.classList.toggle('feature__link_active')
+
         if (btn.addEventListener('click',  ()=>{
           spisoc[index].classList.toggle('hidden')
           btn.classList.toggle('feature__link_active')
