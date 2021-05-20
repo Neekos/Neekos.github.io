@@ -2,6 +2,7 @@
 const morelElems = document.querySelector('.more');
 // получаем селектор модального контейнера
 const modalElems = document.querySelector('.modal');
+// const modalWraper = document.querySelector('.modal-wrapper')
 
 // функция открытия
 const openModal = () =>{
@@ -24,4 +25,13 @@ modalElems.addEventListener('click', (event) =>{
   if (target.classList.contains('overlay') || target.classList.contains('modal__close')) {
     closeModal()
   }
+
+  // contains возвращает false or true
+  // if (target.classList.contains('modal__title')) {
+  //     modalWraper.style.backgroundColor = 'red';
+  // }
+  //
+  // if (target.classList.contains('modal__title')) {
+  //     target.style.backgroundColor = 'red';
+  // }
 });
