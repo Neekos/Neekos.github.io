@@ -1,5 +1,5 @@
 // получаем селектор кнопки узанть больше
-const morelElems = document.querySelector('.more');
+const morelElems = document.querySelectorAll('.more');
 // получаем селектор модального контейнера
 const modalElems = document.querySelector('.modal');
 // const modalWraper = document.querySelector('.modal-wrapper')
@@ -15,8 +15,11 @@ const closeModal = () =>{
   modalElems.classList.add('hidden');
 };
 
-// вызов функции открытия
-morelElems.addEventListener('click', openModal);
+// вызов функции открытия по каждому элементу
+morelElems.forEach((menu, index) => {
+  morelElems[index].addEventListener('click', openModal);
+});
+
 // вызов функции закрытия
 modalElems.addEventListener('click', (event) =>{
   // получаем события
